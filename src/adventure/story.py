@@ -32,6 +32,8 @@ if __name__ == "__main__":
         choice = Prompt.ask("[bright_magenta]Which direction do you choose? [/bright_magenta]", choices=["left", "right", "exit"])
         choice = choice.strip().lower()
         if choice == 'exit':
+            goodbye = Text("Thanks for playing!", style="magenta2")
+            console.print(Panel(goodbye, title="Adventure Ended"))
             break
         
         result = (step(choice, events))
